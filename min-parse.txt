@@ -1,0 +1,349 @@
+{
+"rules": {
+            "SOV"       :   {
+                            "contains" : [["sov"]],
+                            "does not contain" : ["svo", "ovs", "osv", "vso", "vos"]
+                            },
+            "SVO"       :   {
+                            "contains" : [["svo"]],
+                            "does not contain" : ["sov", "ovs", "osv", "vso", "vos"]
+                            },
+            "OVS"       :   {
+                            "contains" : [["ovs"]],
+                            "does not contain" : ["sov", "svo", "osv", "vso", "vos"]
+                            },
+            "OSV"       :   {
+                            "contains" : [["osv"]],
+                            "does not contain" : ["sov", "svo", "ovs", "vso", "vos"]
+                            },
+            "VSO"       :   {
+                            "contains" : [["vso"]],
+                            "does not contain" : ["sov", "svo", "ovs", "osv", "vos"]
+                            },        
+            "VOS"       :   {
+                            "contains" : [["vos"]],
+                            "does not contain" : ["sov", "svo", "ovs", "osv", "vso"]
+                            },
+            "SOV_SVO"   :   {
+                            "contains" : [["sov", "svo"]],
+                            "does not contain" : ["ovs", "osv", "vso", "vos"]
+                            },
+            "SOV_OVS"   :   {
+                            "contains" : [["sov", "ovs"]],
+                            "does not contain" : ["svo", "osv", "vso", "vos"]
+                            },
+            "SOV_OSV"   :   {
+                            "contains" : [["sov", "osv"]],
+                            "does not contain" : ["svo", "ovs", "vso", "vos"]
+                            },
+            "SOV_VSO"   :   {
+                            "contains" : [["sov", "vso"]],
+                            "does not contain" : ["svo", "ovs", "osv", "vos"]
+                            },
+            "SOV_VOS"   :   {
+                            "contains" : [["sov", "vos"]],
+                            "does not contain" : ["svo", "ovs" ,"osv", "vso"]
+                            },
+            "SVO_OVS"   :   {
+                            "contains" : [["svo", "ovs"]],
+                            "does not contain" : ["sov", "osv", "vso", "vos"]
+                            },
+            "SVO_OSV"   :   {
+                            "contains"  : [["svo", "osv"]],
+                            "does not contain" : ["sov", "ovs", "vso", "vso"]
+                            },
+            "SVO_VSO"   :   {
+                            "contains" : [["svo", "vso"]],
+                            "does not contain" : ["sov", "ovs", "osv", "vos"]
+                            },
+            "SVO_VOS"   :   {
+                            "contains"  : [["svo", "vos"]],
+                            "does not contain" : ["sov", "ovs", "osv", "vso"]
+                            }, 
+            "OVS_OSV"   :   {
+                            "contains"  : [["ovs", "osv"]],
+                            "does not contain" : ["sov", "svo", "vso", "vos"]
+                            },
+            "OVS_VSO"   :   {
+                            "contains"  : [["ovs", "vso"]],
+                            "does not contain" : ["sov", "svo", "osv", "vos"]
+                            },
+            "OVS_VOS"   :   {
+                            "contains"  : [["ovs", "vos"]],
+                            "does not contain" : ["sov", "svo", "osv", "vso"]
+                            },
+            "OSV_VSO"   :   {
+                            "contains" : [["osv", "vso"]],
+                            "does not contain" : ["sov", "svo", "ovs", "vos"]
+                            },
+            "OSV_VOS"   :   { 
+                            "contains" : [["osv", "vso"]],
+                            "does not contain" : ["sov", "svo", "ovs", "vso"]
+                            },
+            "VSO_VOS"   :   {
+                            "contains"  : [["vso", "vos"]],
+                            "does not contain" : ["sov", "svo", "ovs", "osv"]
+                            },
+            "SOV_SVO_OVS" : { 
+                            "contains" : [["sov", "svo", "ovs"]],
+                            "does not contain" : ["osv", "vso", "vos"]
+                            },
+            "SOV_SVO_OSV" : {
+                            "contains" : [["sov", "svo", "osv"]],
+                            "does not contain" : ["ovs", "vso", "vos"]
+                            },
+            "SOV_SVO_VSO" : {
+                            "contains" : [["sov", "svo", "vso"]],
+                            "does not contain" : ["ovs", "osv", "vos"]
+                            },
+            "SOV_SVO_VOS" : { 
+                            "contains" : [["sov", "svo", "vos"]],
+                            "does not contain" : ["ovs", "osv", "vso"]
+                            },
+            "SOV_OVS_OSV" : {
+                            "contains" : [["sov", "ovs", "osv"]],
+                            "does not contain" : ["svo", "vso", "vos"]
+                            },
+            "SOV_OVS_VSO" : {
+                            "contains" : [["sov", "ovs", "vso"]],
+                            "does not contain" : ["svo", "osv", "vos"]
+                            },
+            "SOV_OVS_VOS" : {
+                            "contains" : [["sov", "ovs", "vos"]],
+                            "does not contain" : ["svo", "osv", "vso"]
+                            },
+            "SOV_OSV_VSO" : {
+                            "contains" : [["sov", "osv", "vso"]],
+                            "does not contain" : ["svo", "ovs", "vos"]
+                            },
+            "SOV_OSV_VOS" : {
+                            "contains" : [["sov", "osv", "vos"]],
+                            "does not contain" : ["svo", "ovs", "vso"]
+                            },
+            "SOV_VSO_VOS" : {
+                            "contains" : [["sov", "vso", "vos"]],
+                            "does not contain" : ["svo", "ovs", "osv"]
+                            },
+            "SVO_OVS_OSV" : {
+                            "contains" : [["svo", "ovs", "osv"]],
+                            "does not contain" : ["sov", "vso", "vos"]
+                            },
+            "SVO_OVS_VSO" : {
+                            "contains" : [["svo", "ovs", "vso"]],
+                            "does not contain" : ["sov", "osv", "vos"]
+                            },
+            "SVO_OVS_VOS" : {
+                            "contains" : [["svo", "ovs", "vos"]],
+                            "does not contain" : ["sov", "osv", "vso"]
+                            },
+            "SVO_OSV_VSO" : {
+                            "contains" : [["svo", "osv", "vso"]],
+                            "does not contain" : ["sov", "ovs", "vos"]
+                            },
+            "SVO_OSV_VOS" : {
+                            "contains" : [["svo", "osv", "vos"]],
+                            "does not contain" : ["sov", "ovs", "vso"]
+                            },
+            "SVO_VSO_VOS" : {
+                            "contains" : [["svo", "vso", "vos"]],
+                            "does not contain" : ["sov", "ovs", "osv"]
+                            },
+            "OVS_OSV_VSO" : {
+                            "contains" : [["ovs", "osv", "vso"]],
+                            "does not contain": ["sov", "svo", "vos"]
+                            },
+            "OVS_OSV_VOS" : {
+                            "contains" : [["ovs", "osv", "vos"]],
+                            "does not contain" : ["sov", "svo", "vso"]
+                            },
+            "OVS_VSO_VOS" : {
+                            "contains" : [["ovs", "vso", "vos"]],
+                            "does not contain" : ["sov", "svo", "osv"]
+                            },
+            "OSV_VSO_VOS" : {
+                            "contains" : [["osv", "vso", "vos"]],
+                            "does not contain" : ["sov", "svo", "ovs"]
+                            },
+            "FREE_WORD_ORDER" : { 
+                            "contains" : [["word order","fairly free"], ["word order", "does not distinguish"], ["word order", "unconstrained"], ["word order", "flexible"], ["word order", "variable"], ["word order", "no dominant"]]
+                            },
+            "RIGID_WORD_ORDER" : {
+                            "contains" : [["word order","distinguish"], ["word order", "marked"], ["word order", "indicated"], ["word order", "rigid"]],
+                            "does not contain" : ["does not distinguish"]
+                            },
+            "PREPOSITIONS" : {
+                            "contains" : [["preposition"]],
+                            "does not contain" : ["no preposition"]
+                            },
+            "POSTPOSITIONS" : {
+                            "contains" : [["postposition"]],
+                            "does not contain" : ["no postposition"]
+                            },
+            "ADPOSITIONS" : {
+                            "contains" : [["adposition"], ["preposition"], ["postposition"]],
+                            "does not contain" : ["no preposition", "no adposition"]
+                            },
+            "CAUSATIVES" :  {
+                            "contains" : [["causative"]]
+                            },
+            "PASSIVE" :     {
+                            "contains" : [["passive"]],
+                            "does not contain": ["no passive"]
+                            },
+            "TENSE" :       {
+                            "contains" : [["tense"]],
+                            "does not contain" : ["no tense"]
+                            },
+            "ASPECT" :      {
+                            "contains" : [["aspect"]],
+                            "does not contain" : ["no aspect", "no tense or aspect"]
+                            },
+            "ARTICLE" :     {
+                            "contains" : [["article"]],
+                            "does not contain" : ["no article"]
+                            },
+            "DUAL" :        {
+                            "contains" : [["dual"]]
+                            },
+            "TRIAL" :       {
+                            "contains" : [["trial"]]
+                            },
+            "PAUCAL" :      {
+                            "contains" : [["paucal"]]
+                            },
+            "AFFIXES" :     {
+                            "contains" : [["affix"], ["prefix"], ["suffix"]],
+                            "does not contain" : ["no verbal affix", "no casemarking affix", "affixes do not"]
+                            },
+            "VERBAL_AFFIXES" : {
+                            "contains" : [["verb affix"],["verbal affix"]],
+                            "does not contain": ["no verbal affix"]
+                            },
+            "CASE_AFFIXES" : {
+                            "contains" : [["case marked by affix"]]
+                            },
+            "ALIENABLE_POSSESSION" : {
+                            "contains" : [["alienable"]]
+                            },
+            "CLITICS" :     {
+                            "contains" : [["clitics"]]
+                            },
+            "POLYSYNTHETIC" : { 
+                            "contains" : [["polysynthetic"]]
+                            },
+            "AGGLUTINATING" : {
+                            "contains" : [["agglutin"]]
+                            },
+            "ISOLATING" :   {
+                            "contains" : [["isolating"]]
+                            },   
+            "MOOD" :        {
+                            "contains" : [["mood"]]
+                            },
+            "NOUN_HEAD_FINAL" : {
+                            "contains" : [["noun head final"], ["noun heads final"], ["noun final"], ["noun head", "final"]]
+                            },
+            "NOUN_HEAD_INITIAL" : {
+                            "contains" : [["noun head initial"], ["noun heads initial"], ["noun initial"], ["noun head", "final"]]
+                            },
+            "INCLUSIVITY" : {
+                            "contains": [["inclus"]]
+                            },
+            "COMPARATIVE" : {
+                            "contains" : [["comparativ"]],
+                            "does not contain" : ["no comparativ"]
+                            },
+            "VOICE" :       {
+                            "contains" : [["voice"]],
+                            "does not contain" : ["no voice", "no passive or voice", "no passive and voice", "no passives and voice", "no passive or other voice"]
+                            },
+            "HONORIFICS" :  {
+                            "contains" : [["honor"]]
+                            },
+            "CONVERBS" :    {
+                            "contains" : [["converb"]]
+                            },
+            "CASE"      :   {
+                            "contains" : [["case"]],
+                            "does not contain" : ["do not indicate case", "no grammatical gender or case"]
+                            },
+            "GENDER" :      {
+                            "contains" : [["gender"], ["human/non"], ["animacy"],["animate/inanimate"]],
+                            "does not contain" : ["no noun classes or gender", "no gender","no grammatical gender", "no person or gender", "gender not marked"]
+                            },
+            "CLASSES" :     {
+                            "contains" : [["class"]],
+                            "does not contain": ["no noun classes"]
+                            },
+            "CLASSIFIERS" : {
+                            "contains": [["classifier"]]
+                            },
+            "ERGATIVITY" :  { 
+                            "contains" : [["ergat"]],
+                            "does not contain" : ["no ergat"]
+                            },
+            "ACCUSITIVE" :  {
+                            "contains" : [["nominative-acc"]]
+                            },
+            "SPLIT_ERGATIVITY" : { 
+                            "contains" :[["split intrans"], ["split ergat"]]
+                            },
+            "DEFINITENESS" : {
+                            "contains" : [["defin"]]
+                            },
+            "NEGATION_AFTER_VERB" : {
+                            "contains" : [["negation after verb"], ["negation is marked after the verb"]]
+                            },
+            "NEGATION_BEFORE_VERB" : {
+                            "contains" : [["negation before verb"], ["negation is marked before the verb"]]
+                            },
+            "VERB_SERIALIZATION" :  {
+                            "contains" : [["serial"]]
+                            },
+            "EVIDENTIALITY" : {
+                            "contains" : [["evidential"]]
+                            },
+            "REDUPLICATION" : {
+                            "contains" : [["redupl"]]
+                            },
+            "Q_WORD_IN_SITU" : {
+                            "contains" : [["question word", "in situ"], ["q word", "in situ"], ["q-word", "in situ"]]
+                            },
+            "Q_WORD_INITIAL": {
+                            "contains": [["question word", "initial"], ["q word", "initial"], ["q-word", "initial"]]
+                            },
+            "Q_WORD_FINAL" : {
+                            "contains": [["question word", "final"], ["q word", "final"], ["q-word", "final"]]
+                            },
+            "GENITIVES_AFTER_NOUN_HEADS": {
+                            "contains" : [["genitives", "after", "noun head"], ["genitives", "follow", "noun head"], ["genitives", "proceed", "noun head"]]
+                            },
+            "ADJECTIVES_AFTER_NOUN_HEADS" : {
+                            "contains" : [["adjectives", "after", "noun head"], ["adjectives", "follow", "noun head"], ["adjectives", "proceed", "noun head"]]
+                            },
+            "ARTICLES_AFTER_NOUN_HEADS" : {
+                            "contains" : [["articles", "after", "noun head"], ["articles", "follow", "noun head"], ["articles", "proceed", "noun head"]]
+                            },
+            "RELATIVE_CLAUSE_AFTER_NOUN_HEADS" : {
+                            "contains" : [["relative", "after", "noun head"], ["relative", "follow", "noun head"], ["relative", "proceed", "noun head"]]
+                            },
+            "NUMERALS_AFTER_NOUN_HEADS" : {
+                            "contains" : [["numerals", "after", "noun head"], ["numerals", "follow", "noun head"], ["numerals", "proceed", "noun head"], ["numbers", "after", "noun head"], ["numbers", "follow", "noun head"], ["numbers", "proceed", "noun head"]]
+                            },
+            "GENITIVES_BEFORE_NOUN_HEADS": {
+                            "contains" : [["genitives", "before", "noun head"], ["genitives", "precede", "noun head"], ["genitives", "after nouns"]]
+                            },
+            "ADJECTIVES_BEFORE_NOUN_HEADS": {
+                            "contains" : [["adjectives", "before", "noun head"], ["adjectives", "precede", "noun head"]]
+                            },
+            "ARTICLES_BEFORE_NOUN_HEADS": {
+                            "contains" : [["articles", "before", "noun head"], ["article", "precede", "noun head"]]
+                            },
+            "RELATIVE_CLAUSE_BEFORE_NOUN_HEADS": {
+                            "contains" : [["relative", "before", "noun head"], ["relative", "precede", "noun head"]]
+                            },
+            "NUMERALS_BEFORE_NOUN_HEADS": {
+                            "contains" : [["numeral", "before", "noun head"], ["numeral", "precede", "noun head"], ["number", "before", "noun head"], ["number", "precede", "noun head"]]
+                            }
+    }
+}

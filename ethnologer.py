@@ -2,7 +2,7 @@ import json
 import pickle as pkl
 import os
 import argparse
-
+import tqdm
 
 '''
 Ethnologue class becomes an easily searchable class of languages and families present in ethnologue
@@ -15,7 +15,7 @@ class Ethnologue():
         self.families = {}
         self.languages = {}
         self.classifer = classifier
-        for fi in ethnologue_files:
+        for fi in tqdm.tqdm(ethnologue_files):
             name = fi.split('/')[-1][:-5]
             content = open(fi, 'r').read()
             typ = self.get_typological_info(content)
@@ -31,6 +31,8 @@ class Ethnologue():
             if self.families[family].common_typological_features is None:
                 self.families[family].set_common_typological_features()
 
+        self.reconstruct()
+
     def add_family(self, family):
         if family.name not in self.families:
             self.families[family.name] = family
@@ -39,6 +41,10 @@ class Ethnologue():
 
     def add_language(self, language):
         self.languages[language.name] = language
+        if language.parent_family is None:
+            if "Unclassified" in self.families:
+                self.families["Unclassified"] = LanguageFamily("Unclassified")
+            self.families["Unclassified"].add_member(language)
 
     def build_families(self, fam):
         if fam[0] not in self.families:
@@ -109,6 +115,12 @@ class Ethnologue():
             if label in c:
                 return self.remove_tags(c)
 
+    def reconstruct(self):
+        for l in self.languages:
+            if self.languages[l].parent_family.name != "Unclassified":
+                self.languages[l].reconstructed_typological_features = self.languages[l].parent_family.common_typological_features.copy()
+            else:
+                self.languages[l].reconstructed_typological_features = set()
 '''
 LanguageFamily class contains the references to find the members (languages who have this instance as a direct parent) and daughter families (families who have this as a direct parent)
     -common_typological_features is the intersection of all non-zero typological sets of members AND daughter families typological features
