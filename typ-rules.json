@@ -1,0 +1,131 @@
+{
+"rules": {
+            "SENTENCE_ORDER":   {
+                                "SOV"       :   {   "contains" : [["sov"]]},
+                                "SVO"       :   {   "contains" : [["svo"]]},
+                                "OVS"       :   {   "contains" : [["ovs"]]},
+                                "OSV"       :   {   "contains" : [["osv"]]},
+                                "VSO"       :   {   "contains" : [["vso"]]},
+                                "VOS"       :   {   "contains" : [["vos"]]}},
+            "SUBJECT_VERB": {
+                                "SUBJECT_BEFORE_VERB": {"contains" : [["sov"],["svo"],["osv"]]},
+                                "SUBJECT_AFTER_VERB": {"contains" : [["ovs"],["vso"],["vos"]]}},
+            "OBJECT_VERB" : {
+                                "OBJECT_BEFORE_VERB" : {"contains" : [["sov"],["ovs"],["osv"]]},
+                                "OBJECT_AFTER_VERB" : {"contains" :[["svo"],["vso"],["vos"]]}},
+            "SUBJECT_OBJECT":{
+                                "SUBJECT_BEFORE_OBJECT": {"contains" : [["sov"],["svo"],["vso"]]},
+                                "SUBJECT_AFTER_OBJECT": {"contains" :[["ovs"],["osv"],["vos"]]}},
+            "WORD_ORDER": { 
+                                "FREE_WORD_ORDER" : {   "contains" : [["word order","fairly free"], ["word order", "does not distinguish"], ["word order", "unconstrained"], ["word order", "flexible"], ["word order", "variable"], ["word order", "no dominant"]]},
+                                "RIGID_WORD_ORDER" : {  "contains" : [["word order","distinguish"], ["word order", "marked"], ["word order", "indicated"], ["word order", "rigid"]],
+                            "does not contain" : ["does not distinguish"]}},
+            "ADPOSITIONS": { 
+                                "PREPOSITIONS" : {  "contains" : [["preposition"]],
+                                                    "does not contain" : ["no preposition"]},
+                                "POSTPOSITIONS" : { "contains" : [["postposition"]],
+                                                    "does not contain" : ["no postposition"]},
+                                "ADPOSITIONS" : {   "contains" : [["adposition"]],
+                                                    "does not contain" : ["no adposition"]}},
+            "CAUSATIVES": {
+                                "CAUSATIVES" :  {   "contains" : [["causative"]]}},
+            "PASSIVES": {
+                                "PASSIVE" :     {   "contains" : [["passive"]],
+                                                    "does not contain": ["no passive"]}},
+            "TENSE" : {
+                                "TENSE" :       {   "contains" : [["tense"]],
+                                                    "does not contain" : ["no tense"]},
+                                "NO_TENSE":     {   "contains" : [["no tense"]]}},
+            "ASPECT" : {
+                                "ASPECT" :      {   "contains" : [["aspect"]],
+                                                    "does not contain" : ["no aspect", "no tense or aspect"]}},
+            "ARTICLE": {
+                                "ARTICLE" :     {   "contains" : [["article"]],
+                                                    "does not contain" : ["no article"]}},
+            "NUMBER": {
+                                "DUAL" :        {   "contains" : [["dual"]]},
+                                "TRIAL" :       {   "contains" : [["trial"]]},
+                                "PAUCAL" :      {   "contains" : [["paucal"]]},
+                                "SINGULAR" :    {   "contains" : [["single"],["singular"]]},
+                                "PLURAL" :      {   "contains" : [["plural"]]}},
+            "AFFIXES": {
+                                "AFFIXES" :     {   "contains" : [["affix"], ["prefix"], ["suffix"]],
+                                                    "does not contain" : ["no verbal affix", "no casemarking affix", "affixes do not"]},
+                                "VERBAL_AFFIXES" : {"contains" : [["verb affix"],["verbal affix"]],
+                                                    "does not contain": ["no verbal affix"]},
+                                "CASE_AFFIXES" : {  "contains" : [["case marked by affix"]]}},
+            "POSSESSION" : {    "ALIENABLE_POSSESSION" : {  "contains" : [["alienable"]]}},
+            "CLITICS":     {
+                                "CLITICS" :     {   "contains" : [["clitics"]]}},
+            "MORPHOLOGY" : {
+                                "POLYSYNTHETIC" : { 
+                                                    "contains" : [["polysynthetic"]]},
+                                "AGGLUTINATING" : {
+                                                    "contains" : [["agglutin"]]},
+                                "ISOLATING" :   {
+                                                    "contains" : [["isolating"]]}},   
+            "MOOD" : {
+                                "MOOD" :        {   "contains" : [["mood"]]}},
+            
+            "NOUN_HEAD_POSITIONING":{
+                                "NOUN_HEAD_FINAL" : {"contains" : [["noun head final"], ["noun heads final"], ["noun final"], ["noun head", "final"]]},
+                                "NOUN_HEAD_INITIAL" : {"contains" : [["noun head initial"], ["noun heads initial"], ["noun initial"], ["noun head", "final"]]}},
+            "INCLUSIVITY" : {
+                                "INCLUSIVITY" : {   "contains": [["inclus"]]}},
+            "COMPARATIVES": {    
+                                "COMPARATIVE" : {   "contains" : [["comparativ"]],
+                                                    "does not contain" : ["no comparativ"]}},
+            "VOICE":        {
+                                "VOICE" :       {   "contains" : [["voice"]],
+                                                    "does not contain" : ["no voice", "no passive or voice", "no passive and voice", "no passives and voice", "no passive or other voice"]}},
+            "HONORIFICS" : {
+                                "HONORIFICS" :  {   "contains" : [["honor"]]}},
+            "CONVERBS" : {
+                                "CONVERBS" :    {   "contains" : [["converb"]]}},
+            "CASE" : {
+                                "CASE_MARK"      :   {   "contains" : [["case"]],
+                                                    "does not contain" : ["do not indicate case", "no grammatical gender or case"]}},
+            "CLASSES" : {
+                                "CLASSES" :     {   "contains" : [["class"]],
+                                                    "does not contain": ["no noun classes"]},
+                                "GENDER_MARK" :      {   "contains" : [["gender"], ["human/non"], ["animacy"],["animate/inanimate"]],
+                                                    "does not contain" : ["no noun classes or gender", "no gender","no grammatical gender", "no person or gender", "gender not marked"]}},
+            "CLASSIFIERS" : {
+                                "NUMCLASS_MARK" : {   "contains": [["classifier"]]}},
+            "SUBJECT_ALIGNMENT" : {
+                                "ERGATIVE_VS_ABSOLUTIVE_MARK" :  {   "contains" : [["ergat"]],
+                                                    "does not contain" : ["no ergat"]},
+                                "NOMINATIVE_VS_ACCUSATIVE_MARK" :  {   "contains" : [["nominative-acc"]]},
+                                "SPLIT_ERGATIVITY" : { "contains" :[["split intrans"], ["split ergat"]]}},
+            "DEFINITENESS" : {
+                                "DEFINITENESS" : {  "contains" : [["defin"]]}},
+            "NEGATION_LOCATION" : {
+                                "NEGATIVE_WORD_AFTER_VERB" : {"contains" : [["negation after verb"], ["negation is marked after the verb"]]},
+                                "NEGATIVE_WORD_BEFORE_VERB" : {"contains" : [["negation before verb"], ["negation is marked before the verb"]]}},
+            "SERIALIZATION" : {
+                                "VERB_SERIALIZATION" :  {"contains" : [["serial"]]}},
+            "EVIDENTIALITY" : {
+                                "EVIDENTIALITY" : { "contains" : [["evidential"]]}},
+            "REDUPLICATION" : {
+                                "ANY_REDUP" : { "contains" : [["redupl"]]}},
+            "Q_WORD_LOCATION" : {
+                                "Q_WORD_IN_SITU" : {"contains" : [["question word", "in situ"], ["q word", "in situ"], ["q-word", "in situ"]]},
+                                "POLARQ_MARK_INITIAL": { "contains": [["question word", "initial"], ["q word", "initial"], ["q-word", "initial"]]},
+                                "POLARQ_MARK_FINAL" : {  "contains": [["question word", "final"], ["q word", "final"], ["q-word", "final"]]}},
+            "GENITIVE_LOCATION": {
+                                "GENITIVE_AFTER_NOUN": { "contains" : [["genitives", "after", "noun head"], ["genitives", "follow", "noun head"], ["genitives", "proceed", "noun head"]]},
+                                "GENITIVE_BEFORE_NOUN": {"contains" : [["genitives", "before", "noun head"], ["genitives", "precede", "noun head"], ["genitives", "after nouns"]]}},
+            "ADJECTIVE_LOCATION" : { 
+                                "ADJECTIVE_AFTER_NOUN" : {"contains" : [["adjectives", "after", "noun head"], ["adjectives", "follow", "noun head"], ["adjectives", "proceed", "noun head"]]},
+                                "ADJECTIVE_BEFORE_NOUN": {"contains" : [["adjectives", "before", "noun head"], ["adjectives", "precede", "noun head"]]}},
+            "ARTICLE_LOCATIONS" : {
+                                "ARTICLE_WORD_AFTER_NOUN" : { "contains" : [["articles", "after", "noun head"], ["articles", "follow", "noun head"], ["articles", "proceed", "noun head"]]},
+                                "ARTICLE_WORD_BEFORE_NOUN": { "contains" : [["articles", "before", "noun head"], ["article", "precede", "noun head"]]}},
+            "RELATIVE_CLAUSE_LOCATIONS" : {
+                                "RELATIVE_AFTER_NOUN" : {"contains" : [["relative", "after", "noun head"], ["relative", "follow", "noun head"], ["relative", "proceed", "noun head"]]},
+                                "RELATIVE_BEFORE_NOUN": {"contains" : [["relative", "before", "noun head"], ["relative", "precede", "noun head"]]}},
+            "NUMERAL_LOCATIONS" : {    
+                                "NUMERAL_AFTER_NOUN" : { "contains" : [["numerals", "after", "noun head"], ["numerals", "follow", "noun head"], ["numerals", "proceed", "noun head"], ["numbers", "after", "noun head"], ["numbers", "follow", "noun head"], ["numbers", "proceed", "noun head"]]},
+                                "NUMERAL_BEFORE_NOUN": { "contains" : [["numeral", "before", "noun head"], ["numeral", "precede", "noun head"], ["number", "before", "noun head"], ["number", "precede", "noun head"]]}}
+    }
+}
