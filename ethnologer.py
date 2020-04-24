@@ -136,13 +136,14 @@ class Ethnologue:
         pop = HtmlParser.get_speaker_info(content)
 
         if families is not None:
-            print(name, *families, sep="\t")
+            print(name, pop)
         self.build_language(name, families)
         if typ is not None:
             features = classifier.get_features(typ)
             for f in features:
                 self.languages[name].add_typological_feature(f)
         self.languages[name].speakers = pop if pop is not None else -1
+        print(name, self.languages[name].speakers, pop)
         return self.languages[name]
 
     def add_family(self, family):
@@ -211,9 +212,9 @@ class LanguageFamily:
     """
 
     name: str
-    members: List[Language] = field(default_factory=list)
-    daughter_families: List[LanguageFamily] = field(default_factory=list)
-    parent_family: Optional[LanguageFamily] = None
+    members: List[Language] = field(default_factory=list, repr=False)
+    daughter_families: List[LanguageFamily] = field(default_factory=list, repr=False)
+    parent_family: Optional[LanguageFamily] = field(default=None, repr=False)
     common_typological_features: Optional[Any] = None
 
     def __post_init__(self) -> None:
@@ -335,11 +336,11 @@ def load_model(model_path):
 
 
 def save_model(
-        model_path, typological_dict, ethnologue_paths, merge_from_path: Optional[Path] = None
+        output_file, typological_dict, ethnologue_paths, merge_from_path: Optional[Path] = None
 ):
     classifier = TypologicalRules(typological_dict)
     ethno = Ethnologue(classifier, ethnologue_paths, merge_from_path=merge_from_path)
-    pkl.dump(ethno, open(model_path, "wb"))
+    pkl.dump(ethno, open(output_file, "wb"))
 
 
 if __name__ == "__main__":
