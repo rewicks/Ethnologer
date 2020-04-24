@@ -1,29 +1,38 @@
-# Build:
+# Ethnologer
 
-You can build a new ethnologue::
+Read Ethnologue webpages into usable form.
+
+Authors: Rachel Wicks; updated by Arya D. McCarthy
+
+## Build
+
+You can build a new `Ethnologue`:
 
 ```python
 import ethnologer
-ethnologer.save_model(model_path, typological_rules_path, ethnologue_paths)
+ethnologer.save_model(save_dest, typological_rules_json, ethnologue_globbable)
 
 # for example:
-ethnologer.save_model('ETHNOLOGUE', 'min-parse.txt', glob.glob('ethnologue/*'))
+ethnologer.save_model('ETHNOLOGUE', 'typ-rules.json', "ethnologue/*")
 
 ```
 
-# Load
+## Load
 
-You can import ethnologer, and then load a saved model:
+You can import `ethnologer`, and then load a saved model:
+
 ```python
 import ethnologer
-
+from ethnologer import *
 ethnologue = ethnologer.load_model(model_path)
 ```
 
 Then you can get a language:
+
 ```python
 ethnologue.languages['eng']
 ```
+
 From the language, you can get the parent family, or the typological features:
 ```python
 eng = ethnologue.languages['eng']
