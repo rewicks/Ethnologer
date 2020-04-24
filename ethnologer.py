@@ -3,6 +3,7 @@ import pickle as pkl
 import os
 import argparse
 import tqdm
+import re
 
 '''
 Ethnologue class becomes an easily searchable class of languages and families present in ethnologue
@@ -20,12 +21,14 @@ class Ethnologue():
             content = open(fi, 'r').read()
             typ = self.get_typological_info(content)
             fams = self.get_family_info(content)
+            pop = self.get_speaker_info(content)
             self.build_language(name, fams)
    
             if typ != -1:
                 features = classifier.get_features(typ)
                 for f in features:
                     self.languages[name].add_typological_feature(f)
+            self.languages[name].speakers = pop
 
         if merge:
             with open(merge_path) as merge:
@@ -107,6 +110,44 @@ class Ethnologue():
         for f in range(len(fam)):
             fam[f] = fam[f].strip()
         return fam
+
+    def get_speaker_info(self, content):
+        pop = self.get_label(content, 'Population')
+        if pop is None:
+            return -1
+        pop = pop.replace('Population', '')
+        if 'no known' in pop.lower():
+            return 0
+        parentheticals = re.findall('\([^)]*\)', pop)
+        for p in parentheticals:
+            if 'L1' not in p:
+                pop = pop.replace(p, '')
+        pop = pop.split('.')
+        for p in range(len(pop)):
+            pop[p] = pop[p].strip().replace(',','')
+            if 'L1' in pop[p]:
+                pop[p] = 'L1'.join([''] + pop[p].split('L1')[1:])
+                if 'L2' in pop[p]:
+                    pop[p] = pop[p].split('L2')[0]
+        L1 = False
+        speakers = 0
+        for p in pop:
+            if 'L1' in p:
+                if not L1:
+                    speakers = 0
+                L1 = True
+                res = re.findall(r'\d+', p)
+                #res = [int(i) for i in p.split() if i.isdigit()]
+                for r in res:
+                    if int(r) > speakers:
+                        speakers = int(r)
+            if not L1:
+                res = re.findall(r'\d+', p)
+                #res = [int(i) for i in p.split() if i.isdigit()]
+                for r in res:
+                    if int(r) > speakers:
+                        speakers = int(r)
+        return speakers
 
     # removes tags from html
     def remove_tags(self, content):
@@ -216,6 +257,7 @@ class Language():
         self.name = name
         self.typological_features = set()
         self.parent_family = parent_family
+        self.speakers = 0
     
     def add_typological_feature(self, feature):
         self.typological_features.add(feature)
@@ -261,6 +303,7 @@ class TypologicalRules():
                     if r not in temp:
                         if self.satisfies(cat, r, d.lower()):
                             temp.append(r)
+                            retVal.append(r)
             if len(temp) > 0:
                 retVal.append('_AND_'.join(sorted(temp)))
         return retVal
